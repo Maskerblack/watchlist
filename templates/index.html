@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"  type="text/css">
     <title>{{ name }}'s Watchlist</title>
 </head>
 <body>
-    <h2>{{ name }}'s Watchlist</h2>
+    <h2>
+        <img class="heywhale" src="{{ url_for('static', filename='images/Heywhale.png') }}" alt="Whale">
+        {{ name }}'s Watchlist
+    </h2>
     {# 使用 length 过滤器获取 movies 变量的长度 #}
     <p>{{ movies|length }} Titles</p>
-    <ul>
+    <ul class="movie-list">
         {% for movie in movies %}
         <li>{{ movie.title }} - {{ movie.year }}</li>
         {% endfor %}
     </ul>
+    <img class="whale" src="{{ url_for('static', filename='images/方小鲸.png') }}" alt="Whale">
     <footer>
         <small>&copy; 2024 <a href="http://helloflask.com/book/3">HelloFlask</a></small>
     </footer>
