@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"  type="text/css">
-    <title>{{ name }}'s Watchlist</title>
+    <title>{{ user.name }}'s Watchlist</title>
 </head>
 <body>
     <h2>
         <img class="heywhale" src="{{ url_for('static', filename='images/Heywhale.png') }}" alt="Whale">
-        {{ name }}'s Watchlist
+        {{ user.name }}'s Watchlist
     </h2>
     {# 使用 length 过滤器获取 movies 变量的长度 #}
     <p>{{ movies|length }} Titles</p>
